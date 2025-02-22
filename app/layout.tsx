@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Caveat } from 'next/font/google'
 
+const font = Caveat({
+  subsets: ['latin'],
+  variable: '--font-caveat',
+})
 
 export const metadata: Metadata = {
   title: "Zhamira's Art & Tales",
@@ -14,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body className= {`${font.variable}`} >{children}</body>
     </html>
   );
 }
